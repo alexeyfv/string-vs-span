@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Bnchmrk.StartsWithBenchmark-20241006-110158</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4249/23H2/2023Update/SunValley3)
+AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.203
+  [Host]     : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                                                                        </th><th>Mean </th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>string.StartsWith(string)</td><td>77,441.7 &mu;s</td><td>326.05 &mu;s</td><td>289.04 &mu;s</td><td>+10,653%</td><td>0.7%</td><td>57 B</td><td>NA</td>
+</tr><tr><td>&#39;string.StartsWith(string, StringComparison.Ordinal)&#39;</td><td>720.2 &mu;s</td><td>4.47 &mu;s</td><td>4.18 &mu;s</td><td>baseline</td><td></td><td>-</td><td>NA</td>
+</tr><tr><td>&#39;string.StartsWith(string, StringComparison.OrdinalIgnoreCase)&#39;</td><td>825.2 &mu;s</td><td>1.74 &mu;s</td><td>1.45 &mu;s</td><td>+15%</td><td>0.6%</td><td>-</td><td>NA</td>
+</tr><tr><td>&#39;string.StartsWith(string, StringComparison.CurrentCulture)&#39;</td><td>77,838.3 &mu;s</td><td>437.72 &mu;s</td><td>409.44 &mu;s</td><td>+10,708%</td><td>0.8%</td><td>57 B</td><td>NA</td>
+</tr><tr><td>&#39;string.StartsWith(string, StringComparison.CurrentCultureIgnoreCase)&#39;</td><td>77,461.5 &mu;s</td><td>258.93 &mu;s</td><td>216.22 &mu;s</td><td>+10,656%</td><td>0.6%</td><td>57 B</td><td>NA</td>
+</tr><tr><td>&#39;string.StartsWith(string, StringComparison.InvariantCulture)&#39;</td><td>1,467.6 &mu;s</td><td>9.35 &mu;s</td><td>7.81 &mu;s</td><td>+104%</td><td>0.8%</td><td>1 B</td><td>NA</td>
+</tr><tr><td>&#39;string.StartsWith(string, StringComparison.InvariantCultureIgnoreCase)&#39;</td><td>1,793.2 &mu;s</td><td>3.02 &mu;s</td><td>2.67 &mu;s</td><td>+149%</td><td>0.6%</td><td>1 B</td><td>NA</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.StartsWith(string, StringComparison.Ordinal)&#39;</td><td>949.3 &mu;s</td><td>6.50 &mu;s</td><td>6.08 &mu;s</td><td>+32%</td><td>0.8%</td><td>-</td><td>NA</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.StartsWith(string, StringComparison.OrdinalIgnoreCase)&#39;</td><td>788.1 &mu;s</td><td>1.03 &mu;s</td><td>0.80 &mu;s</td><td>+9%</td><td>0.6%</td><td>-</td><td>NA</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.StartsWith(string, StringComparison.CurrentCulture)&#39;</td><td>77,018.8 &mu;s</td><td>449.63 &mu;s</td><td>351.04 &mu;s</td><td>+10,594%</td><td>0.7%</td><td>57 B</td><td>NA</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.StartsWith(string, StringComparison.CurrentCultureIgnoreCase)&#39;</td><td>77,164.5 &mu;s</td><td>767.33 &mu;s</td><td>599.08 &mu;s</td><td>+10,615%</td><td>0.9%</td><td>57 B</td><td>NA</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.StartsWith(string, StringComparison.InvariantCulture)&#39;</td><td>1,286.1 &mu;s</td><td>3.89 &mu;s</td><td>3.45 &mu;s</td><td>+79%</td><td>0.6%</td><td>1 B</td><td>NA</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.StartsWith(string, StringComparison.InvariantCultureIgnoreCase)&#39;</td><td>1,623.7 &mu;s</td><td>2.25 &mu;s</td><td>1.99 &mu;s</td><td>+125%</td><td>0.6%</td><td>1 B</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>

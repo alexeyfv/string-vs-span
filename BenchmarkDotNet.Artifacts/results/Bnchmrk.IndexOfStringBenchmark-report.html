@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Bnchmrk.IndexOfStringBenchmark-20241006-123151</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4249/23H2/2023Update/SunValley3)
+AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.203
+  [Host]     : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                                                                           </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>string.IndexOf(randomString)</td><td>333.837 ms</td><td>5.2581 ms</td><td>5.3997 ms</td><td>baseline</td><td></td><td>400 B</td><td></td>
+</tr><tr><td>&#39;string.IndexOf(randomString, StringComparison.Ordinal)&#39;</td><td>1.615 ms</td><td>0.0092 ms</td><td>0.0077 ms</td><td>-99.5%</td><td>1.6%</td><td>1 B</td><td>-99.8%</td>
+</tr><tr><td>&#39;string.IndexOf(randomString, StringComparison.OrdinalIgnoreCase)&#39;</td><td>1.866 ms</td><td>0.0017 ms</td><td>0.0014 ms</td><td>-99.4%</td><td>1.5%</td><td>1 B</td><td>-99.8%</td>
+</tr><tr><td>&#39;string.IndexOf(randomString, StringComparison.CurrentCulture)&#39;</td><td>329.011 ms</td><td>1.1783 ms</td><td>0.9840 ms</td><td>-1.4%</td><td>1.6%</td><td>200 B</td><td>-50.0%</td>
+</tr><tr><td>&#39;string.IndexOf(randomString, StringComparison.CurrentCultureIgnoreCase)&#39;</td><td>333.899 ms</td><td>0.9951 ms</td><td>0.9308 ms</td><td>+0.0%</td><td>1.6%</td><td>400 B</td><td>+0.0%</td>
+</tr><tr><td>&#39;string.IndexOf(randomString, StringComparison.InvariantCulture)&#39;</td><td>8.081 ms</td><td>0.0179 ms</td><td>0.0139 ms</td><td>-97.6%</td><td>1.5%</td><td>6 B</td><td>-98.5%</td>
+</tr><tr><td>&#39;string.IndexOf(randomString, StringComparison.InvariantCultureIgnoreCase)&#39;</td><td>18.347 ms</td><td>0.0459 ms</td><td>0.0383 ms</td><td>-94.5%</td><td>1.5%</td><td>12 B</td><td>-97.0%</td>
+</tr><tr><td>ReadOnlySpan&lt;char&gt;.IndexOf(randomString)</td><td>1.304 ms</td><td>0.0123 ms</td><td>0.0096 ms</td><td>-99.6%</td><td>1.7%</td><td>1 B</td><td>-99.8%</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.IndexOf(randomString, StringComparison.Ordinal)&#39;</td><td>1.395 ms</td><td>0.0276 ms</td><td>0.0491 ms</td><td>-99.6%</td><td>3.8%</td><td>1 B</td><td>-99.8%</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.IndexOf(randomString, StringComparison.OrdinalIgnoreCase)&#39;</td><td>1.678 ms</td><td>0.0193 ms</td><td>0.0161 ms</td><td>-99.5%</td><td>1.8%</td><td>1 B</td><td>-99.8%</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.IndexOf(randomString, StringComparison.CurrentCulture)&#39;</td><td>332.030 ms</td><td>1.1093 ms</td><td>0.9263 ms</td><td>-0.5%</td><td>1.6%</td><td>200 B</td><td>-50.0%</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.IndexOf(randomString, StringComparison.CurrentCultureIgnoreCase)&#39;</td><td>335.258 ms</td><td>2.5007 ms</td><td>2.0882 ms</td><td>+0.4%</td><td>1.6%</td><td>400 B</td><td>+0.0%</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.IndexOf(randomString, StringComparison.InvariantCulture)&#39;</td><td>7.646 ms</td><td>0.0145 ms</td><td>0.0128 ms</td><td>-97.7%</td><td>1.5%</td><td>6 B</td><td>-98.5%</td>
+</tr><tr><td>&#39;ReadOnlySpan&lt;char&gt;.IndexOf(randomString, StringComparison.InvariantCultureIgnoreCase)&#39;</td><td>17.404 ms</td><td>0.0132 ms</td><td>0.0110 ms</td><td>-94.8%</td><td>1.5%</td><td>12 B</td><td>-97.0%</td>
+</tr></tbody></table>
+</body>
+</html>

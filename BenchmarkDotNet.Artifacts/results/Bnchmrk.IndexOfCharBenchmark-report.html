@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Bnchmrk.IndexOfCharBenchmark-20241006-122924</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4249/23H2/2023Update/SunValley3)
+AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.203
+  [Host]     : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                                                             </th><th>Mean  </th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>string.IndexOf(randomChar)</td><td>846.4 &mu;s</td><td>7.09 &mu;s</td><td>5.53 &mu;s</td><td>baseline</td><td></td><td>-</td><td>NA</td>
+</tr><tr><td>&#39;string.IndexOf(randomChar, StringComparison.Ordinal)&#39;</td><td>1,230.7 &mu;s</td><td>16.34 &mu;s</td><td>16.78 &mu;s</td><td>+45%</td><td>1.5%</td><td>1 B</td><td>NA</td>
+</tr><tr><td>&#39;string.IndexOf(randomChar, StringComparison.OrdinalIgnoreCase)&#39;</td><td>1,315.1 &mu;s</td><td>22.86 &mu;s</td><td>24.46 &mu;s</td><td>+55%</td><td>1.9%</td><td>1 B</td><td>NA</td>
+</tr><tr><td>&#39;string.IndexOf(randomChar, StringComparison.CurrentCulture)&#39;</td><td>263,672.3 &mu;s</td><td>2,649.59 &mu;s</td><td>2,068.63 &mu;s</td><td>+31,052%</td><td>1.0%</td><td>200 B</td><td>NA</td>
+</tr><tr><td>&#39;string.IndexOf(randomChar, StringComparison.CurrentCultureIgnoreCase)&#39;</td><td>265,234.2 &mu;s</td><td>1,834.00 &mu;s</td><td>1,715.52 &mu;s</td><td>+31,236%</td><td>0.9%</td><td>200 B</td><td>NA</td>
+</tr><tr><td>&#39;string.IndexOf(randomChar, StringComparison.InvariantCulture)&#39;</td><td>4,470.7 &mu;s</td><td>67.75 &mu;s</td><td>56.57 &mu;s</td><td>+428%</td><td>1.4%</td><td>3 B</td><td>NA</td>
+</tr><tr><td>&#39;string.IndexOf(randomChar, StringComparison.InvariantCultureIgnoreCase)&#39;</td><td>9,214.2 &mu;s</td><td>21.42 &mu;s</td><td>16.72 &mu;s</td><td>+989%</td><td>0.6%</td><td>6 B</td><td>NA</td>
+</tr><tr><td>SpanDefault</td><td>1,100.4 &mu;s</td><td>2.50 &mu;s</td><td>2.22 &mu;s</td><td>+30%</td><td>0.7%</td><td>1 B</td><td>NA</td>
+</tr></tbody></table>
+</body>
+</html>
