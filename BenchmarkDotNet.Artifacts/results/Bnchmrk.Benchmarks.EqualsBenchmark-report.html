@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Bnchmrk.Benchmarks.EqualsBenchmark-20241013-180828</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.14.0, Windows 11 (10.0.22631.4317/23H2/2023Update/SunValley3)
+AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.203
+  [Host]     : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method                          </th><th>Mean</th><th>Error</th><th>StdDev</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>StringEqualsDefault</td><td>792.7 &mu;s</td><td>9.48 &mu;s</td><td>8.87 &mu;s</td><td>-</td>
+</tr><tr><td>StringEqualsOrdinal</td><td>1,028.5 &mu;s</td><td>11.06 &mu;s</td><td>10.34 &mu;s</td><td>1 B</td>
+</tr><tr><td>StringEqualsOrdinalIgnoreCase</td><td>896.2 &mu;s</td><td>2.75 &mu;s</td><td>2.44 &mu;s</td><td>-</td>
+</tr><tr><td>StringEqualsInvariantCulture</td><td>4,104.6 &mu;s</td><td>66.68 &mu;s</td><td>59.11 &mu;s</td><td>-</td>
+</tr><tr><td>StringEqualsInvariantCultureIgnoreCase</td><td>4,015.8 &mu;s</td><td>43.28 &mu;s</td><td>38.37 &mu;s</td><td>3 B</td>
+</tr><tr><td>StringEqualsCurrentCulture</td><td>4,529.6 &mu;s</td><td>54.23 &mu;s</td><td>48.07 &mu;s</td><td>3 B</td>
+</tr><tr><td>StringEqualsCurrentCultureIgnoreCase</td><td>4,500.1 &mu;s</td><td>49.98 &mu;s</td><td>46.75 &mu;s</td><td>3 B</td>
+</tr><tr><td>SpanEqualsDefault</td><td>NA</td><td>NA</td><td>NA</td><td>NA</td>
+</tr><tr><td>SpanEqualsOrdinal</td><td>1,081.8 &mu;s</td><td>13.36 &mu;s</td><td>11.16 &mu;s</td><td>1 B</td>
+</tr><tr><td>SpanEqualsOrdinalIgnoreCase</td><td>1,122.8 &mu;s</td><td>10.25 &mu;s</td><td>9.09 &mu;s</td><td>1 B</td>
+</tr><tr><td>SpanEqualsInvariantCulture</td><td>3,878.0 &mu;s</td><td>5.81 &mu;s</td><td>4.53 &mu;s</td><td>2 B</td>
+</tr><tr><td>SpanEqualsInvariantCultureIgnoreCase</td><td>4,020.2 &mu;s</td><td>61.33 &mu;s</td><td>57.37 &mu;s</td><td>3 B</td>
+</tr><tr><td>SpanEqualsCurrentCulture</td><td>4,249.9 &mu;s</td><td>26.57 &mu;s</td><td>22.18 &mu;s</td><td>3 B</td>
+</tr><tr><td>SpanEqualsCurrentCultureIgnoreCase</td><td>4,264.4 &mu;s</td><td>31.06 &mu;s</td><td>25.94 &mu;s</td><td>3 B</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,1 +1,1 @@
-dotnet run -c Release --memory --join --disableLogFile -e markdown
+dotnet run -c Release --memory --disableLogFile -e markdown
