@@ -8,7 +8,9 @@ public abstract class BenchmarkBase
     {
         strings = Enumerable
             .Range(1, 100_000)
-            .Select(_ => $"{Guid.NewGuid()}")
+            .Select((i, x) => i % 2 == 0 ?
+                $"{Guid.NewGuid()}".ToLower() :
+                $"{Guid.NewGuid()}".ToUpper())
             .ToArray();
     }
 }
